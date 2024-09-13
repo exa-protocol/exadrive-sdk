@@ -2,12 +2,6 @@ import axios from "axios";
 import * as fs from 'fs';
 import FormData from 'form-data';
 
-export function add(a: number, b: number): number {
-    return a + b;
-}
-
-console.log(add(3, 5)); //output: 8
-
 export class ExaDrive {
     APP_ID: string = '';
     API_KEY: string = '';
@@ -25,9 +19,9 @@ export class ExaDrive {
         }
     }
 
-    public getFile(fileName: string) {
+    public getFile(virtualFilePath: string) {
         return axios.request({
-            url: "/sdk/file/getFile/" + fileName,
+            url: "/sdk/file/getFile/" + virtualFilePath,
             method: 'get',
             baseURL: this.URL,
             headers: this.getHeaders(),
@@ -43,12 +37,13 @@ export class ExaDrive {
         });
     }
 
-    public uploadFile(filePath: string) {
+    public uploadFile(filePath: string, virtualFilePath: string) {
         const fileBuffer = fs.createReadStream(
             filePath
           );
           const formData = new FormData();
           formData.append('file', fileBuffer);
+          formData.append('virtualPath', virtualFilePath);
 
         let headers = this.getHeaders();
         let headers2 = {
@@ -66,9 +61,9 @@ export class ExaDrive {
         )
     }
 
-    public deleteFile(fileName: string) {
+    public deleteFile(virtualFilePath: string) {
         return axios.request({
-            url: "/sdk/file/deleteFile/" + fileName,
+            url: "/sdk/file/deleteFile/" + virtualFilePath,
             method: 'delete',
             baseURL: this.URL,
             headers: this.getHeaders(),
