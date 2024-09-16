@@ -25,7 +25,7 @@ Only 5 apps are allowed in the beta version, we will roll out an unlimited versi
 
 ### Step 2: Start a New App
 
-<figure><img src="../.gitbook/assets/Screenshot 2024-09-13 at 8.22.40 PM.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/Screenshot 2024-09-16 at 9.12.47 AM.png" alt=""><figcaption></figcaption></figure>
 
 ### Step 2: Enter App Details
 
