@@ -12,12 +12,12 @@ icon: arrow-up-from-bracket
 
 ### Step 3: Configure Upload Settings
 
-<figure><img src="../../.gitbook/assets/Screenshot 2024-09-13 at 9.31.10 PM.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/Screenshot 2024-09-16 at 9.08.27 AM.png" alt=""><figcaption></figcaption></figure>
 
 * **Directory**: Enter the directory path where you want to upload the file. Ensure the directory name:
   * Begins with a "/"
   * Does not end with a "/"
-  * Contains only alphabets, numbers, ".", "-", and "\_"
+  * Contains only alphabets, numbers, "+", "-", and "\_"
   * Has no white spaces
 * Click **Choose file** to select the file from your local system.
 * Ensure the file size is within the 8MB limit (for open beta).

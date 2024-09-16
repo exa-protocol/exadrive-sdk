@@ -31,7 +31,7 @@ Once you have uploaded a file to your ExaDrive bucket, you can easily incorporat
 *   **Web Projects**: Use the URL in your HTML or CSS to display images or link to files.
 
     ```
-    xml<img src="https://12345678-w3.exadrivecdn.com/file.png" alt="My Image">
+    <img src="https://12345678-w3.exadrivecdn.com/file.png" alt="My Image">
     ```
 * **Mobile Apps**: Use the URL to fetch and display the file in your app.
 * **APIs**: Include the URL in API responses to provide access to the file.

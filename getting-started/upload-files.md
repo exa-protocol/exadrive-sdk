@@ -15,22 +15,24 @@ To upload a file, use the `uploadFile` method of your ExaDrive instance. This me
 ### Syntax
 
 ```
-exaDrive.uploadFile(filePath)
+exaDriveuploadFile(filePath: string, directoryPath: string)
 ```
 
 * `filePath`: A string representing the path to the file you want to upload.
+* `directoryPath`: A string which will represent the directory you want to put your file in.
 
 ### Example
 
-```
-exaDrive.uploadFile('path/to/file.png')
-  .then((res) => {
+<pre><code><strong># notice the preceding '/' in the directoryPath
+</strong><strong>
+</strong><strong>exaDrive.uploadFile('path/to/file.png', '/myapp1/images')
+</strong>  .then((res) => {
     console.log(res.data);
   })
   .catch((error) => {
     console.error('Upload failed:', error);
   });
-```
+</code></pre>
 
 ### Response Structure
 
@@ -46,7 +48,7 @@ Upon successful upload, the promise resolves with a response object containing d
     "mimetype": "image/png",
     "size": 411663
   },
-  "url": "https://12345678-w3.exadrivecdn.com/file.png"
+  "url": "https://12345678-w3.exadrivecdn.com/myapp1/images/file.png"
 }
 ```
 
@@ -68,7 +70,7 @@ Upon successful upload, the promise resolves with a response object containing d
 For large files, consider implementing a progress indicator:
 
 ```
-exaDrive.uploadFile('path/to/large_file.zip', {
+exaDrive.uploadFile('path/to/large_file.zip', '/myapp1/images', {
   onProgress: (progress) => {
     console.log(`Upload progress: ${progress}%`);
   }
@@ -88,7 +90,7 @@ If you need to upload multiple files, you can use Promise.all():
 ```
 const filePaths = ['file1.jpg', 'file2.pdf', 'file3.docx'];
 
-Promise.all(filePaths.map(file => exaDrive.uploadFile(file)))
+Promise.all(filePaths.map(file => exaDrive.uploadFile(file, '/myapp1/images')))
   .then((results) => {
     results.forEach((res, index) => {
       console.log(`File ${index + 1} uploaded:`, res.data);
@@ -108,10 +110,10 @@ Promise.all(filePaths.map(file => exaDrive.uploadFile(file)))
 5. **Retry Mechanism**: For improved reliability, especially with large files or unstable connections, implement a retry mechanism:
 
 ```
-const uploadWithRetry = async (filePath, maxRetries = 3) => {
+const uploadWithRetry = async (filePath, directoryPath, maxRetries = 3) => {
   for (let attempt = 1; attempt <= maxRetries; attempt++) {
     try {
-      const result = await exaDrive.uploadFile(filePath);
+      const result = await exaDrive.uploadFile(filePath, directoryPath);
       return result;
     } catch (error) {
       if (attempt === maxRetries) throw error;

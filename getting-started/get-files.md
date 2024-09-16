@@ -41,7 +41,8 @@ The method returns a promise that resolves with an array of file objects. Each o
       "mimetype": "image/png",
       "size": 411663
     },
-    "url": "https://12345678-w3.exadrivecdn.com/file1.png"
+    "url": "https://12345678-w3.exadrivecdn.com/myapp1/images/file1.png",
+    "directoryPath": "/myapp1/images"
   },
   // ... more file objects
 ]
@@ -71,7 +72,7 @@ exaDrive.getFile(fileName)
 ### Example
 
 ```
-exaDrive.getFile('file100.png')
+exaDrive.getFile('/myapp1/images/file100.png')
   .then((res) => {
     console.log(res.data);
   })
@@ -92,7 +93,8 @@ The method returns a promise that resolves with an object containing detailed in
     "mimetype": "image/png",
     "size": 411663
   },
-  "url": "https://12345678-w3.exadrivecdn.com/file100.png"
+  "url": "https://12345678-w3.exadrivecdn.com/myapp1/images/file100.png",
+  "directoryPath": "/myapp1/images"
 }
 ```
 

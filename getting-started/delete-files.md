@@ -13,7 +13,7 @@ To delete a specific file from ExaDrive, use the `deleteFile()` method.
 ### Syntax
 
 ```
-exaDrive.deleteFile(fileName)
+exaDrive.deleteFile(directoryPath)
 ```
 
 * `fileName`: A string representing the name of the file you want to delete.
@@ -21,7 +21,7 @@ exaDrive.deleteFile(fileName)
 ### Example
 
 ```
-exaDrive.deleteFile('file1000.png')
+exaDrive.deleteFile('/myapp1/images/file1000.png')
   .then((res) => {
     console.log(res.data);
   })
@@ -36,7 +36,7 @@ The method returns a promise that resolves with an object confirming the deletio
 
 ```
 {
-  "fileName": "file1000.png",
+  "fileName": "/myapp1/images/file1000.png",
   "deleted": true
 }
 ```
@@ -51,15 +51,15 @@ The method returns a promise that resolves with an object confirming the deletio
 To delete multiple files, you need to send separate requests for each file. Here's an example of how to delete multiple files:
 
 ```
-const deleteMultipleFiles = async (fileNames) => {
+const deleteMultipleFiles = async (directoryFilePath) => {
   const results = [];
   for (const fileName of fileNames) {
     try {
-      const result = await exaDrive.deleteFile(fileName);
+      const result = await exaDrive.deleteFile(directoryFilePath);
       results.push(result.data);
-      console.log(`Successfully deleted ${fileName}`);
+      console.log(`Successfully deleted ${directoryFilePath}`);
     } catch (error) {
-      console.error(`Failed to delete ${fileName}:`, error);
+      console.error(`Failed to delete ${directoryFilePath}:`, error);
       results.push({ fileName, deleted: false, error: error.message });
     }
   }
@@ -67,7 +67,7 @@ const deleteMultipleFiles = async (fileNames) => {
 };
 
 // Usage
-const filesToDelete = ['file1.png', 'file2.jpg', 'file3.pdf'];
+const filesToDelete = ['/myapp1/images/file1.png', '/myapp1/images/file2.jpg', '/myapp1/images/file3.pdf'];
 deleteMultipleFiles(filesToDelete)
   .then((results) => {
     console.log('Deletion results:', results);
@@ -89,14 +89,14 @@ const batchDeleteFiles = async (fileNames, concurrency = 5) => {
   const queue = [...fileNames];
   const workers = new Array(concurrency).fill(queue.shift());
 
-  const deleteFile = async (fileName) => {
+  const deleteFile = async (directoryFilePath) => {
     if (!fileName) return;
     try {
-      const result = await exaDrive.deleteFile(fileName);
+      const result = await exaDrive.deleteFile(directoryFilePath);
       results.push(result.data);
-      console.log(`Successfully deleted ${fileName}`);
+      console.log(`Successfully deleted ${directoryFilePath}`);
     } catch (error) {
-      console.error(`Failed to delete ${fileName}:`, error);
+      console.error(`Failed to delete ${directoryFilePath}:`, error);
       results.push({ fileName, deleted: false, error: error.message });
     }
     return deleteFile(queue.shift());
@@ -107,6 +107,7 @@ const batchDeleteFiles = async (fileNames, concurrency = 5) => {
 };
 
 // Usage
+// if you don't send any directory then the file will automatically go to the root folder
 const filesToDelete = ['file1.png', 'file2.jpg', 'file3.pdf', /* ... more files */];
 batchDeleteFiles(filesToDelete)
   .then((results) => {
@@ -122,19 +123,19 @@ batchDeleteFiles(filesToDelete)
 Implement a confirmation step before deleting files to prevent accidental deletions:
 
 ```
-const deleteWithConfirmation = async (fileName) => {
+const deleteWithConfirmation = async (directoryFilePath) => {
   const confirmation = await promptUser(`Are you sure you want to delete ${fileName}? (yes/no)`);
   if (confirmation.toLowerCase() === 'yes') {
     try {
-      const result = await exaDrive.deleteFile(fileName);
-      console.log(`File ${fileName} deleted successfully:`, result.data);
+      const result = await exaDrive.deleteFile(directoryFilePath);
+      console.log(`File ${directoryFilePath} deleted successfully:`, result.data);
       return result.data;
     } catch (error) {
-      console.error(`Failed to delete ${fileName}:`, error);
+      console.error(`Failed to delete ${directoryFilePath}:`, error);
       throw error;
     }
   } else {
-    console.log(`Deletion of ${fileName} cancelled.`);
+    console.log(`Deletion of ${directoryFilePath} cancelled.`);
     return { fileName, deleted: false, reason: 'User cancelled' };
   }
 };
