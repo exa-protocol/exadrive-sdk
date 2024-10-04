@@ -128,10 +128,10 @@ const uploadWithRetry = async (filePath, directoryPath, maxRetries = 3) => {
 
 ### `uploadMulterFile`
 
-The `uploadMulterFile` function is designed for handling file uploads using Multer, a middleware for handling multipart/form-data, which is primarily used for uploading files in Node.js applications.
+Using this function you can directly use Multer file object to upload a file. This is an alternative to uploadFile.
 
 ```
-exaDrive.uploadMulterFile(req, res)
+exaDrive.uploadMulterFile(file: any, virtualDirectoryPath: string)
   .then(response => {
     console.log('Multer file uploaded successfully:', response);
   })
@@ -141,8 +141,24 @@ exaDrive.uploadMulterFile(req, res)
 ```
 
 * **Parameters:**
-  * `req`: The request object containing the file data.
-  * `res`: The response object for sending feedback to the client.
+  * `file`: The request object containing the file data.
+  * `virtualDirectoryPath`:  The path you want to set for the directory of the file.
+
+### Sample Response
+
+```
+{
+  "filename": "file.png",
+  "fileDetails": {
+    "encoding": "7bit",
+    "mimetype": "image/png",
+    "size": 411663
+  },
+  "url": "https://12345678-w3.exadrivecdn.com/myapp1/images/file.png"
+}
+```
+
+
 
 
 
@@ -151,7 +167,7 @@ exaDrive.uploadMulterFile(req, res)
 The `uploadFileWithBuffer` function allows you to upload files using a buffer. This is useful when you have file data in memory and want to upload it directly without saving it to disk first.
 
 ```
-exaDrive.uploadFileWithBuffer(buffer, filename)
+exaDrive.uploadFileWithBuffer(buffer: Buffer, originalFileName: string, mimeType: string, virtualDirectoryPath: string)
   .then(response => {
     console.log('File uploaded with buffer successfully:', response);
   })
@@ -162,6 +178,26 @@ exaDrive.uploadFileWithBuffer(buffer, filename)
 
 * **Parameters:**
   * `buffer`: The buffer containing the file data.
-  * `filename`: The name to assign to the uploaded file.
+  * `originalFileName`: The original name of the file, this will help in locating the file on ExaDrive later.
+  * `mimeType`:  The mime-type of the file.
+  * `virtualDirectoryPath`:  The path you want to set for the directory of the file.
+
+
+
+### Sample Response
+
+```
+{
+  "filename": "file.png",
+  "fileDetails": {
+    "encoding": "7bit",
+    "mimetype": "image/png",
+    "size": 411663
+  },
+  "url": "https://12345678-w3.exadrivecdn.com/myapp1/images/file.png"
+}
+```
+
+
 
 By leveraging these upload capabilities and following best practices, you can efficiently manage file uploads in your application using the ExaDrive SDK.

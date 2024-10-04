@@ -4,10 +4,10 @@ icon: pencil
 
 # Update File
 
-The `updateFile` function allows you to update an existing file in your ExaDrive storage. Use this function to modify file contents or metadata.
+The `updateFile` function allows you to update an existing file's public CDN availability in your ExaDrive storage. You can enable or disable it.
 
 ```
-exaDrive.updateFile(fileId, updatedData)
+exaDrive.updateFile(virtualFilePath: string, enableCDN: boolean)
   .then(response => {
     console.log('File updated successfully:', response);
   })
@@ -17,5 +17,19 @@ exaDrive.updateFile(fileId, updatedData)
 ```
 
 * **Parameters:**
-  * `fileId`: The unique identifier of the file to be updated.
-  * `updatedData`: The new data or metadata for the file.
+  * `virtualFilePath`: The virtual path of the file you want to update.
+  * `enableCDN`: Boolean field to enable or disable the public CDN link.
+
+
+
+### Sample Response
+
+```
+{
+  "message": "virtual-file-path",
+  "enableCDN": true
+}
+```
+
+
+
