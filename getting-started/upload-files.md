@@ -124,7 +124,44 @@ const uploadWithRetry = async (filePath, directoryPath, maxRetries = 3) => {
 };
 ```
 
+
+
+### `uploadMulterFile`
+
+The `uploadMulterFile` function is designed for handling file uploads using Multer, a middleware for handling multipart/form-data, which is primarily used for uploading files in Node.js applications.
+
+```
+exaDrive.uploadMulterFile(req, res)
+  .then(response => {
+    console.log('Multer file uploaded successfully:', response);
+  })
+  .catch(error => {
+    console.error('Error uploading Multer file:', error);
+  });
+```
+
+* **Parameters:**
+  * `req`: The request object containing the file data.
+  * `res`: The response object for sending feedback to the client.
+
+
+
+### `uploadFileWithBuffer`
+
+The `uploadFileWithBuffer` function allows you to upload files using a buffer. This is useful when you have file data in memory and want to upload it directly without saving it to disk first.
+
+```
+exaDrive.uploadFileWithBuffer(buffer, filename)
+  .then(response => {
+    console.log('File uploaded with buffer successfully:', response);
+  })
+  .catch(error => {
+    console.error('Error uploading file with buffer:', error);
+  });
+```
+
+* **Parameters:**
+  * `buffer`: The buffer containing the file data.
+  * `filename`: The name to assign to the uploaded file.
+
 By leveraging these upload capabilities and following best practices, you can efficiently manage file uploads in your application using the ExaDrive SDK.
-
-
-

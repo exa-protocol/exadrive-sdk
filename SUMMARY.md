@@ -5,6 +5,7 @@
 * [Introduction](README.md)
 * [Install SDK](getting-started/install-sdk.md)
 * [Upload Files](getting-started/upload-files.md)
+* [Update File](getting-started/update-file.md)
 * [Get Files](getting-started/get-files.md)
 * [Delete Files](getting-started/delete-files.md)
 * [Best Practices](getting-started/best-practices.md)
