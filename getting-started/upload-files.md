@@ -65,24 +65,6 @@ Upon successful upload, the promise resolves with a response object containing d
 
 ### Advanced Usage
 
-### Handling Large Files
-
-For large files, consider implementing a progress indicator:
-
-```
-exaDrive.uploadFile('path/to/large_file.zip', '/myapp1/images', {
-  onProgress: (progress) => {
-    console.log(`Upload progress: ${progress}%`);
-  }
-})
-.then((res) => {
-  console.log('Large file uploaded successfully:', res.data);
-})
-.catch((error) => {
-  console.error('Upload failed:', error);
-});
-```
-
 ### Batch Uploads
 
 If you need to upload multiple files, you can use Promise.all():
