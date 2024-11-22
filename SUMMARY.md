@@ -14,6 +14,7 @@
 
 * [Introduction](exa-drive-dashboard/introduction.md)
 * [Create an App](exa-drive-dashboard/create-an-app.md)
+* [Connect Your Domain to Your App](exa-drive-dashboard/connect-your-domain-to-your-app.md)
 * [Using a Bucket](exa-drive-dashboard/using-a-bucket/README.md)
   * [Upload a File](exa-drive-dashboard/using-a-bucket/upload-a-file.md)
 * [Use the File in Your Project](exa-drive-dashboard/use-the-file-in-your-project.md)
