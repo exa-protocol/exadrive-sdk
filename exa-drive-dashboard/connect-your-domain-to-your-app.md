@@ -1,3 +1,7 @@
+---
+icon: globe-pointer
+---
+
 # Connect Your Domain to Your App
 
 You can connect a domain or subdomain of your website to your app so that all the URLs of the files you upload are masked under your domain's name.
