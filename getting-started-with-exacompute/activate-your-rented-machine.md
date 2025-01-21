@@ -25,7 +25,7 @@ This guide explains how to access your machine token and install the ExaCompute 
 ### Step 2: Install the ExaCompute Package
 
 1. **Download the ExaCompute Client**:
-   * Download the appropriate ExaCompute package for your system from the official repository or website from this link:&#x20;
+   * Download the appropriate ExaCompute package for your system from the official repository or website from this link: [https://github.com/exa-protocol/exa-compute-client/releases/tag/v1.0.0](https://github.com/exa-protocol/exa-compute-client/releases/tag/v1.0.0)
 2. **Run the Installation Script**:
    * Make sure you are on an **Ubuntu** based system
    * **Install lxd (**[**https://canonical.com/lxd**](https://canonical.com/lxd)**)**
@@ -37,8 +37,7 @@ This guide explains how to access your machine token and install the ExaCompute 
        ```
        sudo ./exa-compute-client-linux
        ```
-3.  **Follow Installation Prompts**:\
-
+3.  **Follow Installation Prompts**:
 
     * The installer will check for OS compatibility and required dependencies (e.g., `lxd`).
     * If dependencies are missing, install them as instructed by the installer.
