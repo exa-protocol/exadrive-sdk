@@ -21,9 +21,9 @@
 * [Billing](exadrive-dashboard/billing.md)
 * [Settings](exadrive-dashboard/settings.md)
 
-## ExaCompute Dashboard
+## GETTING STARTED WITH EXACOMPUTE
 
-* [Introduction](exacompute-dashboard/introduction.md)
-* [Rent Your Machine](exacompute-dashboard/rent-your-machine.md)
-* [Activate Your Rented Machine](exacompute-dashboard/activate-your-rented-machine.md)
-* [View Your Machines & Earnings](exacompute-dashboard/view-your-machines-and-earnings.md)
+* [Introduction](getting-started-with-exacompute/introduction.md)
+* [Rent Your Machine](getting-started-with-exacompute/rent-your-machine.md)
+* [Activate Your Rented Machine](getting-started-with-exacompute/activate-your-rented-machine.md)
+* [View Your Machines & Earnings](getting-started-with-exacompute/view-your-machines-and-earnings.md)
