@@ -10,13 +10,20 @@
 * [Delete Files](getting-started/delete-files.md)
 * [Best Practices](getting-started/best-practices.md)
 
-## Exa Drive Dashboard
+## ExaDrive Dashboard
 
-* [Introduction](exa-drive-dashboard/introduction.md)
-* [Create an App](exa-drive-dashboard/create-an-app.md)
-* [Connect Your Domain to Your App](exa-drive-dashboard/connect-your-domain-to-your-app.md)
-* [Using a Bucket](exa-drive-dashboard/using-a-bucket/README.md)
-  * [Upload a File](exa-drive-dashboard/using-a-bucket/upload-a-file.md)
-* [Use the File in Your Project](exa-drive-dashboard/use-the-file-in-your-project.md)
-* [Billing](exa-drive-dashboard/billing.md)
-* [Settings](exa-drive-dashboard/settings.md)
+* [Introduction](exadrive-dashboard/introduction.md)
+* [Create an App](exadrive-dashboard/create-an-app.md)
+* [Connect Your Domain to Your App](exadrive-dashboard/connect-your-domain-to-your-app.md)
+* [Using a Bucket](exadrive-dashboard/using-a-bucket/README.md)
+  * [Upload a File](exadrive-dashboard/using-a-bucket/upload-a-file.md)
+* [Use the File in Your Project](exadrive-dashboard/use-the-file-in-your-project.md)
+* [Billing](exadrive-dashboard/billing.md)
+* [Settings](exadrive-dashboard/settings.md)
+
+## ExaCompute Dashboard
+
+* [Introduction](exacompute-dashboard/introduction.md)
+* [Rent Your Machine](exacompute-dashboard/rent-your-machine.md)
+* [Activate Your Rented Machine](exacompute-dashboard/activate-your-rented-machine.md)
+* [View Your Machines & Earnings](exacompute-dashboard/view-your-machines-and-earnings.md)
