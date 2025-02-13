@@ -22,7 +22,7 @@ Follow the instructions below to download and install the ExaCompute Desktop App
    *   Since the app is self-signed, macOS Gatekeeper may block it. You will see a warning message like:
 
        ```
-       text"Apple could not verify 'exa_protocol_client***.dmg' is free of malware that may harm your Mac or compromise your privacy."
+       "Apple could not verify 'exa_protocol_client***.dmg' is free of malware that may harm your Mac or compromise your privacy."
        ```
    * To proceed:
      * Open **System Settings > Privacy & Security**.
