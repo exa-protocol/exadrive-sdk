@@ -27,3 +27,9 @@
 * [Rent Your Machine](getting-started-with-exacompute/rent-your-machine.md)
 * [Activate Your Rented Machine](getting-started-with-exacompute/activate-your-rented-machine.md)
 * [View Your Machines & Earnings](getting-started-with-exacompute/view-your-machines-and-earnings.md)
+
+## ExaCompute Desktop App
+
+* [Introduction](exacompute-desktop-app/introduction.md)
+* [Download and Install Desktop App](exacompute-desktop-app/download-and-install-desktop-app.md)
+* [Connect your machine to the Exa Network](exacompute-desktop-app/connect-your-machine-to-the-exa-network.md)
